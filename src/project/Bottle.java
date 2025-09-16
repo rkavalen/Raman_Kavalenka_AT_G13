@@ -2,19 +2,12 @@ package project;
 
 public class Bottle {
     private double volume;
-    SparklingWater water = new SparklingWater(volume);
+    private SparklingWater water;
 
     public Bottle(double volume) {
         this.volume = volume;
-
-    }
-
-    public double getVolume() {
-        return volume;
-    }
-
-    public void setVolume(double volume) {
-        this.volume = volume;
+        this.water = new SparklingWater(volume);
+        water.pump(water.getSparkingBubbles());
     }
 
     public void open() {
