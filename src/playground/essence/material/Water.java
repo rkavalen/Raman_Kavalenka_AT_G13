@@ -1,4 +1,4 @@
 package playground.essence.material;
 
-public class Water {
+public class Water implements Pourable {
 }

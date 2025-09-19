@@ -1,7 +1,6 @@
 package playground.essence.creatures;
 
-public class Beetle extends Insect {
-
+public class Beetle extends Insect implements Crawlable {
 
     public void nest(Carrot home) {
         String nesting;
