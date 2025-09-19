@@ -1,4 +1,4 @@
 package playground.essence.material;
 
-public class Diesel {
+public class Diesel implements Pourable, Powerable {
 }

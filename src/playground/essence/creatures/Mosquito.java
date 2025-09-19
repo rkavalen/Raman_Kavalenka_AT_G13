@@ -1,4 +1,6 @@
 package playground.essence.creatures;
 
-public class Mosquito extends Insect {
+import playground.essence.Flyable;
+
+public class Mosquito extends Insect implements Flyable {
 }

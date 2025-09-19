@@ -49,16 +49,4 @@ Playground Task 2:
 
 
 Playground Task 3:
-создать интерфейсы (которые реализуются соответствующими классами, согласно перечислению):
-package playground.essence
-летающие (Flyable): воздушные транспортные стредства, комар, муха
-package playground.essence.craft
-перемещающие (Transportable): воздушные транспортные стредства, наземные транспортные стредства
-ездящие (Rideable): наземные транспортные стредства
-package playground.essence.creatures;
-ползающие (Crawlable): жук, крокодил
-package playground.essence.craft.hand
-хранящие (Storable): бутылка, банка
-package playground.essence.material
-льющиеся (Pourable): бензин, дизельное топливо, вода
-питающие (Powerable): бензин, дизельное топливо
+
