@@ -233,3 +233,130 @@ package playground.essence.craft.hand
 package playground.essence.material
 льющиеся (Pourable): бензин, дизельное топливо, вода
 питающие (Powerable): бензин, дизельное топливо
+
+
+Playground Task 4:
+обновляем интерфейсы:
+-- интерфейс летающие имеют невозвратный метод fly(String direction); - принимает строку направления движения и печатает в консоль фразу "I am N, my name is M and I amd flying to D", где N - название класса соответствующего обьекта, М - значение name обьекта, D - строка, подставляемая из значения передаваемого аргумента
+
+создаем классы:
+-- package playground.utils
+-- class DirectionGenerator
+у него есть публичный статический метод generateDirection() - который генерирует случайное число от 1 (включая) до 40 (исключая), и возвращает строку одного из 4-х значений направления, следуя логике, если случайное от 1 до 9 - NORTH, от 10 до 19 - SOUTH, от 20 до 29 - WEST, от 30 до 39 - EAST
+-- package playground.processors
+-- class FlyableProcessor
+у него есть перегруженный публичный невозвратный метод:
+runFlyable(Flyable flyable) - принимает обьект летающего и вызывает у него метод fly, которому передает случайное направления, которое генерируется вызовом метода generateDirection() из утилиты DirectionGenerator
+runFlyable(Flyable flyable, String direction) - принимает обьект летающего и строку направления, и вызывает у первого метод fly, которому передает строку направления, переданную в качестве аргумента
+выполняем код:
+-- package playground.runners
+-- class FlyableProcessorRunner с методом main, в котором
+-- создать обьект класса FlyableProcessor
+-- создать следующие обьекты:
+Flyable flyableCopter = new Copter(223, "Mi8 Flyable");
+Flyable flyablePlane = new Plane(3452, "Boeing 837 Flyable");
+Flyable flyableRocket = new Rocket(7623, "Super Heavy Flyable");
+Flyable flyableFly = new Fly(23, "Domestica Flyable");
+Flyable flyableMosquito = new Mosquito(12, "Vulgaris Flyable");
+Aircraft aircraftCopter = new Copter(223, "Mi8 Aircraft");
+Aircraft aircraftPlane = new Plane(3452, "Boeing 837 Aircraft");
+Aircraft aircraftRocket = new Rocket(7623, "Super Heavy Aircraft");
+Insect insectFly = new Fly(23, "Domestica Insect");
+Insect insectMosquito = new Mosquito(12, "Vulgaris Insect");
+Copter aCopter = new Copter(223, "Mi8 Copter");
+Plane aPlane = new Plane(3452, "Boeing 837 Plane");
+Rocket aRocket = new Rocket(7623, "Super Heavy Rocket");
+Fly aFly = new Fly(23, "Domestica Fly");
+Mosquito aMosquito = new Mosquito(12, "Vulgaris Mosquito");
+-- при помощи обьекта класса FlyableProcessor запустить runFlyable с каждым из обьектов из предыдущего пункта
+-- в случае, если метод runFlyable не смог принять на вход обьект, закомментировать вызов метода и добавить пояснение причины
+-- при помощи обьекта класса FlyableProcessor запустить runFlyable с 2-мя любыми обьектами Flyable и направлениями "никуда" и "повсюду"
+
+
+Playground Task 5:
+обновляем интерфейсы:
+--перемещающие: имеют метод int move(int pointA, int pointB); - принимает 2 целых числа и печатает в консоль фразу "I am N, my name is M and I am moving from point A to point B", где N - название класса соответствующего обьекта, М - значение name обьекта, А и В - числа, подставляемые из значения передаваемых аргументов, и возвращает целое число, являющееся разницей В и А
+
+создаем классы:
+-- package playground.utils
+-- class CoordinatesGenerator
+у него есть публичный статический метод generateCoordinate() - который генерирует случайное число от 1 (включая) до 80 (исключая), печатает в консоль строку "CoordinatesGenerator: I have generated point with value: X", где Х - сгенерированное число, и возвращает это число
+
+-- package playground.processors
+-- class TransportableProcessor
+у него есть перегруженный публичный невозвратный метод:
+runTransportable(Transportable transportable, int pointA, int pointB) - принимает обьект перемещающего и числа точек перемещения А и В, и вызывает у первого метод move, которому передает точки перемещения, после чего печатает в консоль строку "Transportable N was moved to M points", где N - название класса соответствующего обьекта, M - получаемое значение расстояния в результате выполнения метода move
+runTransportable(Transportable transportable) - принимает обьект перемещающего, и вызывает у него move, которому передает случайные значения точек перемещения, которые генерируется вызовами метода generateCoordinate() из утилиты CoordinatesGenerator, после чего печатает в консоль строку "Transportable N was moved to M points", где N - название класса соответствующего обьекта, M - получаемое значение расстояния в результате выполнения метода move
+выполняем код:
+-- package playground.runners
+-- class TransportableProcessorRunner с методом main, в котором
+-- создать обьект класса TransportableProcessor
+-- создать следующие обьекты:
+Transportable transportableCopter = new Copter(223, "AW109 Transportable");
+Transportable transportablePlane = new Plane(3452, "Airbus a380 Transportable");
+Transportable transportableRocket = new Rocket(7623, "Soyuz-FG Transportable");
+Transportable transportableCar = new Car(23, "Tesla X Transportable");
+Transportable transportableMoped = new Moped(12, "Honda EM1 Transportable");
+Transportable transportableMotorbike = new Motorbike(12, "Suzuki GSX-R1000 Transportable");
+Aircraft aircraftCopter = new Copter(223, "AW109 Aircraft");
+Aircraft aircraftPlane = new Plane(3452, "Airbus a380 Aircraft");
+Aircraft aircraftRocket = new Rocket(7623, "Soyuz-FG Aircraft");
+Vehicle vehicleCar = new Car(23, "Tesla X Vehicle");
+Vehicle vehicleMoped = new Moped(12, "Honda EM1 Vehicle");
+Vehicle vehicleMotorbike = new Motorbike(12, "Suzuki GSX-R1000 Vehicle");
+Flyable flyableCopter = new Copter(223, "AW109 Flyable");
+Flyable flyablePlane = new Plane(3452, "Airbus a380 Flyable");
+Flyable flyableRocket = new Rocket(7623, "Soyuz-FG Flyable");
+Rideable rideableCar = new Car(23, "Tesla X Rideable");
+Rideable rideableMoped = new Moped(12, "Honda EM1 Rideable");
+Rideable rideableMotorbike = new Motorbike(12, "Suzuki GSX-R1000 Rideable");
+Copter aCopter = new Copter(223, "AW109 Copter");
+Plane aPlane = new Plane(3452, "Airbus a380 Plane");
+Rocket aRocket = new Rocket(7623, "Soyuz-FG Rocket");
+Car aCar = new Car(23, "Tesla X Car");
+Moped aMoped = new Moped(12, "Honda EM1 Moped");
+Motorbike aMotorbike = new Motorbike(12, "Suzuki GSX-R1000 Motorbike");
+-- при помощи обьекта класса TransportableProcessor запустить runTransportable с каждым из обьектов из предыдущего пункта
+-- в случае, если метод runTransportable не смог принять на вход обьект, закомментировать вызов метода и добавить пояснение причины
+-- при помощи обьекта класса TransportableProcessor запустить runTransportable с 2-мя любыми обьектами Transportable и точеками перемещения 23 и 242, 93 и 7
+String task (коллекции и потоки, которые можно найти в образцах кода в интернете или подсказках от идеи, категорически не использовать!), каждое подзадание выполняем в отдельном классе
+1.1 сделать метод, который позволяет отпечатать в консоль все буквы в столбик из строки текста, которую принимает на вход в виде аргумента.
+1.2 сделать метод, который позволяет найти и вывести в консоль все дубликаты слов в строке текста, который принимает на вход в виде аргумента.
+1.3 сделать метод, который позволяет найти в тексте все цифры и преобразовать их в массив числовых переменных, вывести все элементы массива в косоль, текст получает на вход в виде аргумента
+1.4 имеется текстовый лог в виде (ниже общий вид, т.е. частный случай):
+
+access_log.2020.09.07 212.168.101.5 granted
+access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.122.6 denied
+написать метод, который принимает на вход текст лога и выводит список из уникальных IP адресов и количества удачных и неудачных попыток доступа в формате:
+ip 212.168.101.5: ok - 3, failed - 2
+
+1.5 написать метод, который выводит в консоль текущую дату и время в формате:
+Сейчас на дворе: 19 сентября, 2020, 3 часа 13 минут
+
+1.6 написать метод, который принимает на вход строку с датой и временем в формате "22.00 07.09.2020" и выводит в консоль в формате "September, 7, 2020 22:00"
+
+1.7 написать метод, который принимает на вход строку текста и выводит в консоль дату, которая на n дней больше, чем текущая в формате "Сгенерированная гласная дата: 7 мая", где n - это количество гласных буков в получаемой строке
+
+1.8 Создать класс StringObjectRunner, где в main методе создать по обьекту предыдущих классов и запустить выполнение созданных методов.
+
+1.9 Переписать в отдельных классах все методы созданные в заданиях 1.1 - 1.7, сделав их статическими.
+
+1.10 Создать класс StringStaticRunner, где в main методе запустить методы классов из предыдущего задания, обратившись к ним статически.
+
+
+оздать класс обобщенного типа GenericMethodsInGenericClassT<T> и в нем:
+-- невозвратный метод genericMethodOneGenArg, принимающий аргумент переменного типа и печатающий в консоль фразу "I am an object of X class", где X - название класса передаваемого аргумента
+-- метод genericMethodTwoGenArgs, принимающий 2 аргумента переменного типа и возвращающий строку "We are objects of X class and Y class", где X и Y - название классов передаваемых аргументов
+-- невозвратный метод genericMethodHalfGenArgs, принимающий 1 аргумент переменного типа и второй аргумент типа String, и печатающий в консоль фразу "I got an object of X class and string with N characters", где X - название класса передаваемых аргументов, N - количество символов в переданной строке
+
+создать класс GenericMethodsInGenericClassTRunner с методом main и в нем:
+-- создать обьекты типа GenericMethodsInGenericClassT<T> с параметрами типа String, Integer, Double и всеми типами, которые содержаться в пакете playground.essence
+-- вызывать каждый из методов у каждого из обьектов, в случае, если метод возвратный - отпечатать возвращаемое им значение в консоль
+создать класс обобщенного типа GenericMethodsInGenericClassTwoParams<X, Y> и в нем:
+-- перегруженный метод genericMethodGenArgs, принимающий 1 или 2 аргумента переменного типа и возвращающий строку "I received N arguments of type: X class, Y class", где N - количество полученных аргументов, X и Y - название классов передаваемых аргументов
+-- перегруженный невозвратный метод genericMethodHalfGenArgs, принимающий 1 или 2 аргумента переменного типа и второй или третитй аргумент типа String, и печатающий в консоль фразу "I got an object of X class and Y class and string with N characters", где X - название класса передаваемых аргументов, N - количество символов в переданной строке, перегрузку метода сделать для вариантов параметров типа (X, String), (Y, String)
+создать класс GenericMethodsInGenericClassTwoParamsRunner с методом main и в нем:
+-- создать обьекты типа GenericMethodsInGenericClassTwoParams <X, Y> с параметрами типа <String, String>, <String, Integer>, <String, Double>,  <Integer, Integer> и всеми типами, которые содержаться в пакете playground.essence, используя каждый из них хотя бы 1 раз
+-- вызывать каждый из методов у каждого из обьектов, в случае, если метод возвратный - отпечатать возвращаемое им значение в консоль
