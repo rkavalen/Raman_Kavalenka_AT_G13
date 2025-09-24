@@ -1,7 +1,7 @@
 package playground.essence.craft.field;
 
-public class Moped extends Vehicle {
-    public Moped(int mass, String name) {
+public class Motorbike extends Vehicle {
+    public Motorbike(int mass, String name) {
         super(mass, name);
     }
 
