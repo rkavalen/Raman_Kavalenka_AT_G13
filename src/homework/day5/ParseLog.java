@@ -5,25 +5,38 @@ public class ParseLog {
         String[] lines = log.split("\\n");
         int l = lines.length;
         boolean[] counted = new boolean[l];
-        int counter;
-        String[] uniqueIp;
 
         for (int i = 0; i < l; i++) {
-            if (counted[i]) {
-                continue;
-            }
+            if (counted[i]) continue;
             counted[i] = true;
-            counter = 1;
-            String ip = lines[i].split(" ")[1];
+            int counter = 1;
+            String ip1 = lines[i].split(" ")[1];
+            String status1 = lines[i].split(" ")[2];
+
+            int okCounter = 0;
+            int neOkCounter = 0;
+            if (("granted".equals(status1))) {
+                okCounter++;
+            } else {
+                neOkCounter++;
+            }
+
             for (int j = i + 1; j < l; j++) {
-                if (lines[i].equalsIgnoreCase(lines[j])) {
+                String ip2 = lines[j].split(" ")[1];
+                String status2 = lines[j].split(" ")[2];
+
+                if (ip1.equalsIgnoreCase(ip2)) {
                     counter++;
                     counted[j] = true;
+                    if ((status2.equals("granted"))) {
+                        okCounter++;
+                    } else {
+                        neOkCounter++;
+                    }
                 }
             }
-
-
+            System.out.printf("ip %s: ok - %d, failed - %d", ip1, okCounter, neOkCounter);
+            System.out.println();
         }
-        String status = lines.split(" ")[2];
     }
 }
