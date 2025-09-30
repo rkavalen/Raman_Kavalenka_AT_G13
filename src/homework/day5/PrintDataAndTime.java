@@ -1,17 +1,58 @@
 package homework.day5;
 
-import java.time.Instant;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
+import java.time.LocalDateTime;
 
 public class PrintDataAndTime {
     public static void printDataAndTime() {
-        Instant now = Instant.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM, yyyy, H часа M минут", Locale.of("ru"));
-        System.out.println("Сейчас на дворе: " + formatter.format(now));
-    }
+        LocalDateTime now = LocalDateTime.now();
+        int day = now.getDayOfMonth();
+        int monthNumber = now.getMonthValue();
+        int year = now.getYear();
+        int hours = now.getHour();
+        int minutes = now.getMinute();
 
-    public static void main(String[] args) {
-        PrintDataAndTime.printDataAndTime();  // Unsupported field: DayOfMonth
+        String month = "";
+
+        switch (monthNumber) {
+            case 1:
+                month = "января";
+                break;
+            case 2:
+                month = "февраля";
+                break;
+            case 3:
+                month = "марта";
+                break;
+            case 4:
+                month = "апреля";
+                break;
+            case 5:
+                month = "мая";
+                break;
+            case 6:
+                month = "июня";
+                break;
+            case 7:
+                month = "июля";
+                break;
+            case 8:
+                month = "августа";
+                break;
+            case 9:
+                month = "сентября";
+                break;
+            case 10:
+                month = "октября";
+                break;
+            case 11:
+                month = "ноября";
+                break;
+            case 12:
+                month = "декабря";
+                break;
+        }
+
+        System.out.printf("Сейчас на дворе: %d %s, %d, %d часа %d минут", day, month, year, hours, minutes);
+        System.out.println();
     }
 }

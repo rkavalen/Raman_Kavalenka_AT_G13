@@ -7,11 +7,11 @@ public class FindDublicates {
         boolean[] counted = new boolean[l];
         int counter;
 
-        for (int i = 1; i < l; i++) {
+        for (int i = 0; i < l; i++) {
             if (counted[i]) {
                 continue;
             }
-
+            counted[i] = true;
             counter = 1;
             for (int j = i + 1; j < l; j++) {
                 if (words[i].equalsIgnoreCase(words[j])) {
@@ -23,10 +23,11 @@ public class FindDublicates {
             if (counter > 1) {
                 String[] dubplicates = new String[counter];
                 dubplicates[0] = words[i];
-                for (int dublicate = 1; dublicate < counter; dublicate++) {
+                int dublicate = 1;
+                while (dublicate < counter) {
                     for (int j = i + 1; j < l; j++) {
                         if (words[i].equalsIgnoreCase(words[j])) {
-                            dubplicates[dublicate] = words[j];
+                            dubplicates[dublicate++] = words[j];
                         }
                     }
                 }

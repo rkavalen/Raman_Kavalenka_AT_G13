@@ -10,5 +10,6 @@ public class FindDigits {
         for (int i : d) {
             System.out.print(i + " ");
         }
+        System.out.println();
     }
 }
