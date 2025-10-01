@@ -15,6 +15,6 @@ public class StringStaticRunner {
                 """);
         PrintDataAndTime.printDataAndTime();
         ParseData.parseDate("22.00 07.09.2020");
-
+        EvenDate.printDate("aoe");
     }
 }
