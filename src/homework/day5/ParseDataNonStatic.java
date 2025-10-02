@@ -3,8 +3,8 @@ package homework.day5;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class ParseData {
-    public static void parseDate(String date) {
+public class ParseDataNonStatic {
+    public void parseDate(String date) {
         DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("HH.mm d.MM.yyyy");
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("MMMM, dd, yyyy HH:mm");
 

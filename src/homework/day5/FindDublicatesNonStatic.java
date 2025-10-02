@@ -1,7 +1,7 @@
 package homework.day5;
 
-public class FindDublicates {
-    public static void findDublicates(String string) {
+public class FindDublicatesNonStatic {
+    public void findDublicates(String string) {
         String[] words = string.split("[^а-яА-Яa-zA-Z]+");
         int l = words.length;
         boolean[] counted = new boolean[l];

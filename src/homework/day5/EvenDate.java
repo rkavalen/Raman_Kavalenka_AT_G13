@@ -1,18 +1,23 @@
 package homework.day5;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
-public class PrintDataAndTime {
-    public static void printDataAndTime() {
-        LocalDateTime now = LocalDateTime.now();
-        int day = now.getDayOfMonth();
-        int monthNumber = now.getMonthValue();
-        int year = now.getYear();
-        int hours = now.getHour();
-        int minutes = now.getMinute();
+public class EvenDate {
+    public static void printDate(String str) {
+        String[] text = str.toLowerCase().split("");
+        int counter = 0;
+        for (String i : text) {
+            if (i.matches("[aoeiuyаоуыэяёюие]")) ;
+            counter++;
+        }
+
+        LocalDateTime date = LocalDateTime.now().plusDays(counter);
+
+        int day = date.getDayOfMonth();
+        int monthNumber = date.getMonthValue();
 
         String month = "";
-
         switch (monthNumber) {
             case 1:
                 month = "января";
@@ -52,7 +57,7 @@ public class PrintDataAndTime {
                 break;
         }
 
-        System.out.printf("Сейчас на дворе: %d %s, %d, %d часа %d минут", day, month, year, hours, minutes);
+        System.out.printf("Сгенерированная гласная дата: %d %s", day, month);
         System.out.println();
     }
 }

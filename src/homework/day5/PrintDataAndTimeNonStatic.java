@@ -2,8 +2,8 @@ package homework.day5;
 
 import java.time.LocalDateTime;
 
-public class PrintDataAndTime {
-    public static void printDataAndTime() {
+public class PrintDataAndTimeNonStatic {
+    public void printDataAndTime() {
         LocalDateTime now = LocalDateTime.now();
         int day = now.getDayOfMonth();
         int monthNumber = now.getMonthValue();
