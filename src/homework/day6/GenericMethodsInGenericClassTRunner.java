@@ -45,6 +45,7 @@ public class GenericMethodsInGenericClassTRunner {
         Mug aMug = new Mug(5, "MyMug");
         GenericMethodsInGenericClassT<Mug> mug = new GenericMethodsInGenericClassT<>();
         mug.setObject(aMug);
+
         Beetle aBeetle = new Beetle(4, "Beetle");
         GenericMethodsInGenericClassT<Beetle> beetle = new GenericMethodsInGenericClassT<>();
         beetle.setObject(aBeetle);
