@@ -2,7 +2,9 @@ package playground.essence.creatures;
 
 import playground.essence.Matter;
 
-public abstract class Animal extends Matter {
+import java.io.Serializable;
+
+public abstract class Animal extends Matter implements Serializable {
     protected String name;
 
     public Animal(int mass, String name) {
