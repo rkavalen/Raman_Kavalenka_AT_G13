@@ -1,6 +1,8 @@
 package playground.essence.creatures;
 
-public abstract class Vertebrate extends Animal {
+import java.io.Serializable;
+
+public abstract class Vertebrate extends Animal implements Serializable {
 
 
     public Vertebrate(int mass, String name) {
