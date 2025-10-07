@@ -1,6 +1,6 @@
-package homework.day7;
+package homework.day8;
 
-import homework.day7.prep.Chair;
+import homework.day8.prep.Chair;
 
 import java.util.ArrayList;
 import java.util.Arrays;

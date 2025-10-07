@@ -1,9 +1,8 @@
-package homework.day7;
+package homework.day8;
 
-import homework.day7.prep.Cities;
+import homework.day8.prep.Cities;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 
 public class CitiesMapTask {

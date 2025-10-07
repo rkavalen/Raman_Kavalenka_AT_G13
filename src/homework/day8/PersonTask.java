@@ -1,6 +1,6 @@
-package homework.day7;
+package homework.day8;
 
-import homework.day7.prep.Person;
+import homework.day8.prep.Person;
 
 import java.util.ArrayList;
 

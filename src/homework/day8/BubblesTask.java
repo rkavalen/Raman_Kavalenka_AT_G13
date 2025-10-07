@@ -1,6 +1,6 @@
-package homework.day7;
+package homework.day8;
 
-import homework.day7.prep.Bubble;
+import homework.day8.prep.Bubble;
 
 import java.util.ArrayList;
 import java.util.Arrays;

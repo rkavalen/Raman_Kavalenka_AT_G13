@@ -1,4 +1,4 @@
-package homework.day7;
+package homework.day8;
 
 import java.util.HashMap;
 import java.util.Map;

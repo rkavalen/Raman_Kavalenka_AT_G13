@@ -1,6 +1,6 @@
-package homework.day7;
+package homework.day8;
 
-import homework.day7.prep.Sand;
+import homework.day8.prep.Sand;
 
 import java.util.ArrayList;
 import java.util.HashMap;
