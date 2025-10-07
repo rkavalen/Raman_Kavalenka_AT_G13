@@ -1,4 +1,4 @@
-package homework.day7.prep;
+package homework.day8.prep;
 
 import java.util.Objects;
 
