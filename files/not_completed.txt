@@ -1,0 +1,111 @@
+Playground Task 6:
+обновляем интерфейсы:
+--ездящие: имеют метод void drive(String direction);
+- принимает строку направления движения и печатает в консоль фразу
+"I am N, my name is M and I amd driving to D", где N - название класса соответствующего обьекта,
+М - значение name обьекта, D - строка, подставляемая из значения передаваемого аргумента
+
+создаем классы:
+-- package playground.processors
+-- class RideableProcessor
+у него есть перегруженный публичный невозвратный метод:
+runRideable(Rideable rideable) - принимает обьект ездящего и вызывает у него метод drive,
+которому передает случайное направления,
+которое генерируется вызовом метода generateDirection() из утилиты DirectionGenerator
+
+runRideable(Rideable rideable, String direction) - принимает обьект ездящего и строку направления,
+и вызывает у первого метод drive, которому передает строку направления,
+переданную в качестве аргумента
+
+выполняем код:
+-- package playground.runners
+-- class RideableProcessorRunner с методом main, в котором
+-- создать обьект класса RideableProcessor
+-- создать следующие обьекты:
+Rideable rideableCar = new Car(223, "Lada Rideable");
+Rideable rideableMoped = new Moped(3452, "Honda EM1 837 Rideable");
+Rideable rideableMotorbike = new Motorbike(7623, "Suzuki GSX-R1000 Rideable");
+Vehicle vehicleCar = new Car(223, "Lada Vehicle");
+Vehicle vehicleMoped = new Moped(3452, "Honda EM1 837 Vehicle");
+Vehicle vehicleMotorbike = new Motorbike(7623, "Suzuki GSX-R1000 Vehicle");
+Car aCar = new Car(223, "Lada Car");
+Moped aMoped = new Moped(3452, "Honda EM1 837 Moped");
+Motorbike aMotorbike = new Motorbike(7623, "Suzuki GSX-R1000 Motorbike");
+Vehicle anonymousVehicle = new Vehicle(3452, "Honda EM1 837 Vehicle"){};
+Rideable anonymousRideable = new Rideable(){
+    String name = "Anonymous";
+    @Override
+    public void drive(String direction) {
+        System.out.printf("I am %s, my name is %s and I amd drive to %s%n",
+            this.getClass().getSimpleName(), this.name, direction);
+    }
+};
+-- при помощи обьекта класса RideableProcessor запустить runRideable
+с каждым из обьектов из предыдущего пункта
+-- в случае, если метод runRideable не смог принять на вход обьект,
+закомментировать вызов метода и добавить пояснение причины
+
+-- при помощи обьекта класса RideableProcessor запустить runRideable с 2-мя любыми обьектами Rideable
+и направлениями "никуда" и "повсюду"
+
+Playground Task 7:
+обновляем интерфейсы:
+--ползающие имеют метод void crawl(String direction, int distance);
+- принимает строку направления движения и целое число растояния,
+и печатает в консоль фразу "I am N, my name is M and I am crawling to D for F units",
+где N - название класса соответствующего обьекта, М - значение name обьекта,
+D и F - значения передаваемых аргументов, при этом после проползания крокодил издает в консоль
+"wr-wr-wrr-r..", а жук "vz-vz-vzz-zz.."
+
+создаем классы:
+-- package playground.utils
+-- class DistanceGenerator
+у него есть публичный статический метод generateDistance()
+ - который генерирует случайное число от 1 (включая) до 100 (исключая),
+ печатает в консоль строку "DistanceGenerator: I have generated distance with value: X",
+ где Х - сгенерированное число, и возвращает это число
+-- package playground.processors
+-- class CrawlableProcessor
+
+у него есть перегруженный публичный невозвратный метод:
+runCrawlable(Crawlable crawlable) -
+принимает обьект ползающего и вызывает у него метод crawl,
+которому передает случайное направление,
+генерируемое вызовом метода generateDirection() из утилиты DirectionGenerator,
+и случайную дистанцию, генерируемую вызовом метода generateDistance() из утилиты DistanceGenerator
+
+runCrawlable(Crawlable crawlable, String direction)
+- принимает обьект ползающего и строку направления,
+и вызывает у первого метод crawl, которому передает строку направления,
+переданную в качестве аргумента и случайную дистанцию,
+генерируемую вызовом метода generateDistance() из утилиты DistanceGenerator
+
+runCrawlable(Crawlable crawlable, String direction, int distance)
+- принимает обьект ползающего, строку направления и число дистанции,
+и вызывает у первого метод crawl, которому передает направление и дистанцию,
+переданные в качестве аргумента
+
+выполняем код:
+-- package playground.runners
+-- class CrawlableProcessorRunner с методом main, в котором
+-- создать обьект класса CrawlableProcessor
+-- создать следующие обьекты:
+Crawlable crawlableCrocodile = new Crocodile(1723, "Neel Crawlable");
+Crawlable crawlableBeetle = new Beetle(43, "Christmas Crawlable");
+Vertebrata vertebrataCrocodile = new Crocodile(1723, "Neel Vertebrata");
+Insect insectBeetle = new Beetle(43, "Christmas Insect");
+Crocodile aCrocodile = new Crocodile(1723, "Neel Crocodile");
+Beetle aBeetle = new Beetle(43, "Christmas Beetle");
+Crawlable anonymousCrawlable = new Crawlable() {
+    String name = "Anonymous";
+    @Override
+    public void crawl(String direction, int distance) {
+        System.out.printf("I am %s, my name is %s and I am crawling to %s for %d units%n",
+            this.getClass().getSimpleName(), name, direction, distance);
+    }
+};
+-- при помощи обьекта класса CrawlableProcessor запустить runCrawlable с каждым из обьектов из предыдущего пункта
+-- в случае, если метод runCrawlable не смог принять на вход обьект, закомментировать вызов метода и добавить пояснение причины
+-- при помощи обьекта класса CrawlableProcessor запустить runCrawlable с 2-мя любыми обьектами Crawlable и направлениями "никуда" и "налево"
+-- при помощи обьекта класса CrawlableProcessor запустить runCrawlable с 1-м любым обьектом Crawlable, направлением "назад" и дистанцией 37
+-- при помощи обьекта класса CrawlableProcessor запустить runCrawlable с анонимным обьектом Crawlable, который создается прямо в скобках вызываемого метода, направлением "вниз" и дистанцией 37
