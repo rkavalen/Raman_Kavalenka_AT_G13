@@ -7,7 +7,7 @@ public class Plane extends Aircraft {
 
     @Override
     public void fly(String direction) {
-        String flyTo = String.format("I am %s, my name is %s and I am flying to %s", getClass().getSimpleName(), this.getName(), direction);
+        String flyTo = String.format("I am %s, my name is %s and I am flying to %s", getClass().getSimpleName(), this.name, direction);
         System.out.println(flyTo);
     }
 
