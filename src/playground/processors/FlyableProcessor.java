@@ -4,10 +4,8 @@ import playground.essence.Flyable;
 import playground.utils.DirectionGenerator;
 
 public class FlyableProcessor {
-
     public void runFlyable(Flyable flyable) {
-        String direction = DirectionGenerator.generateDirection();
-        flyable.fly(direction);
+        flyable.fly(DirectionGenerator.generateDirection());
     }
 
     public void runFlyable(Flyable flyable, String direction) {

@@ -594,7 +594,12 @@ Rideable anonymousRideable = new Rideable(){
 -- при помощи обьекта класса RideableProcessor запустить runRideable с 2-мя любыми обьектами Rideable и направлениями "никуда" и "повсюду"
 Playground Task 7:
 обновляем интерфейсы:
---ползающие имеют метод void crawl(String direction, int distance); - принимает строку направления движения и целое число растояния, и печатает в консоль фразу "I am N, my name is M and I am crawling to D for F units", где N - название класса соответствующего обьекта, М - значение name обьекта, D и F - значения передаваемых аргументов, при этом после проползания крокодил издает в консоль "wr-wr-wrr-r..", а жук "vz-vz-vzz-zz.."
+--ползающие имеют метод void crawl(String direction, int distance);
+ - принимает строку направления движения и целое число растояния,
+ и печатает в консоль фразу "I am N, my name is M and I am crawling to D for F units",
+ где N - название класса соответствующего обьекта, М - значение name обьекта,
+ D и F - значения передаваемых аргументов,
+ при этом после проползания крокодил издает в консоль "wr-wr-wrr-r..", а жук "vz-vz-vzz-zz.."
 
 создаем классы:
 -- package playground.utils

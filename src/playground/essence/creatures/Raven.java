@@ -2,7 +2,7 @@ package playground.essence.creatures;
 
 import java.io.Serializable;
 
-public class Raven extends Vertebrate implements Serializable {
+public class Raven extends Vertebrata implements Serializable {
     public Raven(int mass, String name) {
         super(mass, name);
     }
