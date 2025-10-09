@@ -2,10 +2,8 @@ package playground.essence.creatures;
 
 import java.io.Serializable;
 
-public abstract class Vertebrate extends Animal implements Serializable {
-
-
-    public Vertebrate(int mass, String name) {
+public abstract class Vertebrata extends Animal implements Serializable {
+    public Vertebrata(int mass, String name) {
         super(mass, name);
     }
 

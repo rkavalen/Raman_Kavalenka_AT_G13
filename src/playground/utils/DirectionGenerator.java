@@ -3,8 +3,6 @@ package playground.utils;
 import java.util.Random;
 
 public class DirectionGenerator {
-
-
     public static String generateDirection() {
         int randomDirValue;
         String direction = "";
