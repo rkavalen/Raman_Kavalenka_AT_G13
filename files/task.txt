@@ -636,3 +636,5 @@ Crawlable anonymousCrawlable = new Crawlable() {
 -- при помощи обьекта класса CrawlableProcessor запустить runCrawlable с 2-мя любыми обьектами Crawlable и направлениями "никуда" и "налево"
 -- при помощи обьекта класса CrawlableProcessor запустить runCrawlable с 1-м любым обьектом Crawlable, направлением "назад" и дистанцией 37
 -- при помощи обьекта класса CrawlableProcessor запустить runCrawlable с анонимным обьектом Crawlable, который создается прямо в скобках вызываемого метода, направлением "вниз" и дистанцией 37
+
+
