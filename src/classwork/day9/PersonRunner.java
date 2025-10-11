@@ -15,10 +15,8 @@ public class PersonRunner {
         int counter = 0;
         for (Person p : people) {
             if (p.age < 18) continue;
-            if (p.sex.equals(Person.Sex.MAN)) {
-                if (p.age <= 60) {
-                    counter++;
-                }
+            if (p.sex.equals(Person.Sex.MAN) && p.age <= 60) {
+                counter++;
             } else {
                 if (p.age <= 55) {
                     counter++;
@@ -27,6 +25,10 @@ public class PersonRunner {
         }
         System.out.println(counter);
 
-        System.out.println(people.stream().filter(Person -> (Person.age >= 18 && Person.age < 60 && Person.sex.equals(classwork.day9.Person.Sex.MAN))||(Person.age >= 18 && Person.age < 55 && Person.sex.equals(classwork.day9.Person.Sex.WOMEN))).count());
+        System.out.println(
+                people.stream().filter(Person -> (Person.age >= 18 &&
+                                (Person.age < 60 && Person.sex.equals(classwork.day9.Person.Sex.MAN))) ||
+                                (Person.age < 55 && Person.sex.equals(classwork.day9.Person.Sex.WOMEN)))
+                        .count());
     }
 }
