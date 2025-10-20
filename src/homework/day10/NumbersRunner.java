@@ -1,6 +1,5 @@
 package homework.day10;
 
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class NumbersRunner {

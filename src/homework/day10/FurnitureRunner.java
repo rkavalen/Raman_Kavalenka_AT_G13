@@ -3,37 +3,17 @@ package homework.day10;
 import homework.day8.prep.Bubble;
 import homework.day8.prep.Chair;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.OptionalInt;
 import java.util.Random;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class FurnitureRunner {
-    public static void main(String[] args) {
-        /**
-         15.
-         Создать поток данных furniture класса Chair (через new Stream.of) furniture из 3 стульев
-         высотой (120, 90, 100, 110) и шириной (40, 30, 50, 45) соответственно
-
-         Отфильтровать только те стулья, который выше или равны 100 и уже или равны 50
-
-         Отсортировать по высоте, а если высота равна, то по ширине в нисходящем порядке
-
-         На основании существующего потока данных создать новый,
-         в котором каждый новый Chair имеет высоту, деленную на 2, и ширину,
-         умноженную на случайное число от 3 до 8 включительно
-
-         На основании получившегося потока данных создать новый,
-         представляющий собой уникальный набо высот стульев умноженных на их ширину
-
-         Найти наибольшее значение в получившемся потоке
-
-         Создать новый обьект Bubble с обьемом равным найденному наибольшему значению
-         и именем равным найденному наибольшему значению,
-         представленным в виде словесного выражения каждой цифры числа этого значения,
-         указанного чере пробел
-
-         Напечатать строковое значение полученного обьекта в текстовый файл
-         */
-
+    public static void main(String[] args) throws IOException {
         Stream<Chair> furniture = Stream.of(
                 new Chair(120, 40),
                 new Chair(90, 30),
@@ -41,8 +21,7 @@ public class FurnitureRunner {
                 new Chair(110, 45)
         );
 
-
-        furniture.filter(s -> s.getHeight() >= 100 && s.getWidth() <= 50)
+        OptionalInt maxV = furniture.filter(s -> s.getHeight() >= 100 && s.getWidth() <= 50)
                 .sorted((x, y) -> {
                     if (x.getHeight() != y.getHeight()) {
                         return x.getHeight() - y.getHeight();
@@ -54,11 +33,29 @@ public class FurnitureRunner {
                         s.getWidth() * (new Random().nextInt(6) + 3)))
                 .mapToInt(s -> s.getWidth() * s.getHeight())
                 .distinct()
-                .max()
-//                .stream()
-//                .map(s -> {
-//                    return new Bubble(s,)
-//                })
-        ;
+                .max();
+
+        Bubble b1 = new Bubble(maxV.getAsInt(),
+                maxV.stream()
+                        .mapToObj(String::valueOf)
+                        .flatMap(s -> Arrays.stream(s.split("")))
+                        .map(digit -> switch (digit) {
+                            case "1" -> "один";
+                            case "2" -> "два";
+                            case "3" -> "три";
+                            case "4" -> "четыре";
+                            case "5" -> "пять";
+                            case "6" -> "шесть";
+                            case "7" -> "семь";
+                            case "8" -> "восемь";
+                            case "9" -> "девять";
+                            case "0" -> "ноль";
+                            default -> digit;
+                        })
+                        .collect(Collectors.joining(" ")));
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("Furniture.txt"))){
+            bw.write(String.valueOf(b1));
+        }
     }
 }
