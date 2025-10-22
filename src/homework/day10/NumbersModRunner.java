@@ -1,6 +1,7 @@
 package homework.day10;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.stream.Stream;
 
 public class NumbersModRunner {
@@ -9,43 +10,21 @@ public class NumbersModRunner {
         numbersMod.map(String::valueOf)
                 .filter(s -> s.contains("3"))
                 .flatMap(s -> Arrays.stream(s.split("")))
-                .map(string -> {
-                    switch (string) {
-                        case "1":
-                            string = "один";
-                            break;
-                        case "2":
-                            string = "два";
-                            break;
-                        case "3":
-                            string = "три";
-                            break;
-                        case "4":
-                            string = "четыре";
-                            break;
-                        case "5":
-                            string = "пять";
-                            break;
-                        case "6":
-                            string = "шесть";
-                            break;
-                        case "7":
-                            string = "семь";
-                            break;
-                        case "8":
-                            string = "восемь";
-                            break;
-                        case "9":
-                            string = "девять";
-                            break;
-                        case "0":
-                            string = "ноль";
-                            break;
-                    }
-                    return string;
+                .map(digit -> switch (digit) {
+                    case "1" -> "один";
+                    case "2" -> "два";
+                    case "3" -> "три";
+                    case "4" -> "четыре";
+                    case "5" -> "пять";
+                    case "6" -> "шесть";
+                    case "7" -> "семь";
+                    case "8" -> "восемь";
+                    case "9" -> "девять";
+                    case "0" -> "ноль";
+                    default -> digit;
                 })
                 .distinct()
-                .sorted((s1, s2) -> s2.compareTo(s1))
+                .sorted(Comparator.reverseOrder())
                 .forEach(System.out::println);
     }
 }
