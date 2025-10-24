@@ -8,7 +8,7 @@ public class ElementsRunner {
         Stream<String> elements = Stream.of("Text field", "Radio", "Check-box", "Drop-down", "Picker", "Breadcrumb");
         elements.flatMap(s -> Arrays.stream(s.split("[ -]")))
                 .map(string -> {
-                    string = string.length() % 2 == 0 ? string.replaceAll("e", "o") : String.valueOf(string.length());
+                    string = string.length() % 2 != 0 ? string.replaceAll("e", "o") : String.valueOf(string.length());
                     return string;
                 })
                 .distinct()
