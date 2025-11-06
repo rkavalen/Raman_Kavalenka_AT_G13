@@ -5,7 +5,7 @@ import playground.essence.people.ManualEngineer;
 
 import static org.junit.Assert.assertEquals;
 
-public class ManualEngineerTest {
+public class ManualEngineerJUnitTest {
     @Test
     public void getAgeTest() {
         ManualEngineer manualEngineer = new ManualEngineer(20, 1);

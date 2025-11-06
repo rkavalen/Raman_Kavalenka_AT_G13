@@ -7,7 +7,7 @@ public class ButterfliesRunner {
         ArrayList<String> butterflies = new ArrayList<>();
         butterflies.add("Common blue");
         butterflies.add("Swallowtail");
-        butterflies.add("Aglais io");
+        butterflies.add("Aglaia io");
         butterflies.add("Common blue");
 
         butterflies.stream()
