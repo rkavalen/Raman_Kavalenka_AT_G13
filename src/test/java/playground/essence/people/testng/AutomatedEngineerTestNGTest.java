@@ -5,7 +5,7 @@ import playground.essence.people.AutomatedEngineer;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class AutomatedEngineerTest {
+public class AutomatedEngineerTestNGTest {
     @Test
     public void getAgeTest() {
         AutomatedEngineer automatedEngineer = new AutomatedEngineer(25, 5);

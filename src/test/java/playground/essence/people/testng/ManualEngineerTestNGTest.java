@@ -6,7 +6,7 @@ import playground.essence.people.ManualEngineer;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class ManualEngineerTest {
+public class ManualEngineerTestNGTest {
     @Test
     public void getAgeTest() {
         ManualEngineer manualEngineer = new ManualEngineer(20, 1);

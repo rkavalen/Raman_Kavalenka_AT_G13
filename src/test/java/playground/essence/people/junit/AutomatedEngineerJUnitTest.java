@@ -5,7 +5,7 @@ import playground.essence.people.AutomatedEngineer;
 
 import static org.junit.Assert.assertEquals;
 
-public class AutomatedEngineerTest {
+public class AutomatedEngineerJUnitTest {
     @Test
     public void getAgeTest() {
         AutomatedEngineer automatedEngineer = new AutomatedEngineer(25, 5);

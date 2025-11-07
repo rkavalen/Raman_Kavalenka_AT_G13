@@ -15,7 +15,6 @@ public class AutoRunner {
                 .skip(1)
 //                .peek(System.out::println)
                 .map(String::toUpperCase)
-                .peek(System.out::println)
-                .toList();
+                .forEach(System.out::println);
     }
 }
