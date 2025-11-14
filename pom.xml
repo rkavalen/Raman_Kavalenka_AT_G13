@@ -70,9 +70,9 @@
                     <includes>
                         <include>JUnit4Runner</include>
                     </includes>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/java/playground/essence/people/testng/testng.xml</suiteXmlFile >
-                    </suiteXmlFiles>
+<!--                    <suiteXmlFiles>-->
+<!--                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile >-->
+<!--                    </suiteXmlFiles>-->
                 </configuration>
             </plugin>
         </plugins>
