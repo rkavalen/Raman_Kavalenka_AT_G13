@@ -1,7 +1,7 @@
 package day16;
 
-import org.junit.Assert;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -15,9 +15,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.time.LocalDate;
-import java.util.Collections;
 
-public class BookingTask {
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
+
+public class BookingParis {
     private WebDriver driver;
 
     @Before
@@ -26,7 +27,6 @@ public class BookingTask {
         chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--disable-infobars");
-        chromeOptions.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
         driver = new ChromeDriver(chromeOptions);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
@@ -59,18 +59,22 @@ public class BookingTask {
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(visibilityOfElementLocated(By.xpath("//div[@data-testid='property-card']")));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(By.xpath("//div[@data-filters-item='class:class=5']")).click();
-        driver.findElement(By.xpath("//div//button[@data-testid='sorters-dropdown-trigger']")).click();
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath("//div//button[@data-id='class_asc']")));
-        driver.findElement(By.xpath("//div//button[@data-id='class_asc']")).click();
 
+        driver.findElement(By.xpath("//div//button[@data-testid='sorters-dropdown-trigger']")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div//button[@data-id='class_asc']")));
+        driver.findElement(By.xpath("//div//button[@data-id='class_asc']")).click();
 
         Assert.assertEquals("Рейтинг первого отеля не 5", "5 из 5", driver.findElement(By.xpath("//div[@role='button'][1]")).getAttribute("aria-label"));
     }
 
     @After
     public void quitDriver() {
-        if (driver != null) {
+        if (null != driver) {
             driver.quit();
         }
     }
