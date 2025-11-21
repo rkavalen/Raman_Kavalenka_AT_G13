@@ -1,29 +1,21 @@
-package day16;
+package tests;
 
-import org.junit.After;
+import driver.Driver;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
-
-import java.time.Duration;
 
 public class Demoqa {
     private WebDriver driver;
 
     @Before
     public void setDriver() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
-        chromeOptions.addArguments("--start-maximized");
-        chromeOptions.addArguments("--disable-infobars");
-        driver = new ChromeDriver(chromeOptions);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver = Driver.getDriver();
+        Driver.setTimeout(5);
     }
 
     @Test
@@ -53,12 +45,5 @@ public class Demoqa {
         Select standartMulti = new Select(standartMultiSelect);
         standartMulti.selectByValue("saab");
         standartMulti.selectByVisibleText("Audi");
-    }
-
-    @After
-    public void quitDriver() {
-        if (null != driver) {
-            driver.quit();
-        }
     }
 }

@@ -1,4 +1,4 @@
-package playground.essence.people.junit;
+package tests;
 
 import org.junit.Test;
 import playground.essence.people.ManualEngineer;

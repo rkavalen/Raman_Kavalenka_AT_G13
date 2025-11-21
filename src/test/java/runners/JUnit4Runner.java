@@ -1,7 +1,6 @@
-package playground.essence.people.junit;
+package runners;
 
-import day15.WeatherTask;
-import day16.*;
+import tests.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 

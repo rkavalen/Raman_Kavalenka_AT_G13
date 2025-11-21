@@ -6,8 +6,8 @@
     <groups>
     </groups>
     <test started-at="2025-11-06T22:10:28 MSK" name="Command line test" finished-at="2025-11-06T22:10:28 MSK" duration-ms="57">
-      <class name="playground.essence.people.testng.ParametrizedTestNGTest">
-        <test-method signature="verifyAgeGetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:playground.essence.people.testng.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyAgeGetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="6" status="PASS">
+      <class name="tests.ParametrizedTestNGTest">
+        <test-method signature="verifyAgeGetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:tests.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyAgeGetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -33,7 +33,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAgeGetter -->
-        <test-method signature="verifyAgeGetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:playground.essence.people.testng.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyAgeGetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="1" status="PASS">
+        <test-method signature="verifyAgeGetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:tests.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyAgeGetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -59,7 +59,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAgeGetter -->
-        <test-method signature="verifyAgeSetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:playground.essence.people.testng.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyAgeSetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="1" status="PASS">
+        <test-method signature="verifyAgeSetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:tests.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyAgeSetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -85,7 +85,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAgeSetter -->
-        <test-method signature="verifyAgeSetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:playground.essence.people.testng.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyAgeSetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="0" status="PASS">
+        <test-method signature="verifyAgeSetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:tests.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyAgeSetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -111,7 +111,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAgeSetter -->
-        <test-method signature="verifyExpGetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:playground.essence.people.testng.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyExpGetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="0" status="PASS">
+        <test-method signature="verifyExpGetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:tests.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyExpGetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -137,7 +137,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyExpGetter -->
-        <test-method signature="verifyExpGetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:playground.essence.people.testng.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyExpGetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="1" status="PASS">
+        <test-method signature="verifyExpGetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:tests.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyExpGetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -163,7 +163,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyExpGetter -->
-        <test-method signature="verifyExpSetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:playground.essence.people.testng.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyExpSetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="1" status="PASS">
+        <test-method signature="verifyExpSetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:tests.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyExpSetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -189,7 +189,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyExpSetter -->
-        <test-method signature="verifyExpSetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:playground.essence.people.testng.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyExpSetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="0" status="PASS">
+        <test-method signature="verifyExpSetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:tests.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifyExpSetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -215,7 +215,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyExpSetter -->
-        <test-method signature="verifySkillGetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:playground.essence.people.testng.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifySkillGetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="1" status="PASS">
+        <test-method signature="verifySkillGetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:tests.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifySkillGetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -241,7 +241,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySkillGetter -->
-        <test-method signature="verifySkillGetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:playground.essence.people.testng.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifySkillGetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="1" status="PASS">
+        <test-method signature="verifySkillGetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:tests.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifySkillGetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -267,7 +267,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySkillGetter -->
-        <test-method signature="verifySkillSetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:playground.essence.people.testng.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifySkillSetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="0" status="PASS">
+        <test-method signature="verifySkillSetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:tests.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifySkillSetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -293,7 +293,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySkillSetter -->
-        <test-method signature="verifySkillSetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:playground.essence.people.testng.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifySkillSetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="0" status="PASS">
+        <test-method signature="verifySkillSetter(playground.essence.people.Engineer,java.lang.Integer,java.lang.Integer,java.lang.Integer)[pri:0, instance:tests.ParametrizedTestNGTest@548ad73b]" started-at="2025-11-06T22:10:28 MSK" name="verifySkillSetter" data-provider="test1" finished-at="2025-11-06T22:10:28 MSK" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -319,7 +319,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySkillSetter -->
-      </class> <!-- playground.essence.people.testng.ParametrizedTestNGTest -->
+      </class> <!-- tests.ParametrizedTestNGTest -->
     </test> <!-- Command line test -->
   </suite> <!-- Command line suite -->
 </testng-results>

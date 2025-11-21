@@ -1,6 +1,6 @@
-package day16;
+package tests;
 
-import org.junit.After;
+import driver.Driver;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,8 +8,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -22,12 +20,8 @@ public class BookingPrague {
 
     @Before
     public void setDriver() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
-        chromeOptions.addArguments("--start-maximized");
-        chromeOptions.addArguments("--disable-infobars");
-        driver = new ChromeDriver(chromeOptions);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver = Driver.getDriver();
+        Driver.setTimeout(5);
     }
 
     @Test
@@ -46,12 +40,12 @@ public class BookingPrague {
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        Driver.setTimeout(0);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(visibilityOfElementLocated(By.xpath("//div[@data-testid='property-card']")));
         driver.findElement(By.xpath("//div[@data-testid='filters-group-label-content']")).click();
         wait.until(visibilityOfElementLocated(By.xpath("//div[@data-testid='property-card']")));
-
+        Driver.setTimeout(5);
         driver.findElement(By.xpath("//div[@data-testid='property-card'][1]//h3")).click();
 
         String currentWindowHandle = driver.getWindowHandle();
@@ -66,12 +60,5 @@ public class BookingPrague {
         String rating = driver.findElement(By.xpath("//div[@data-testid='review-score-right-component']/div[@aria-hidden]")).getText();
 
         Assert.assertTrue("Rating is less than 9", Double.parseDouble(rating.replace(',', '.')) >= 9.0);
-    }
-
-    @After
-    public void quitDriver() {
-        if (null != driver) {
-            driver.quit();
-        }
     }
 }

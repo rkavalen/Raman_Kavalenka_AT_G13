@@ -1,0 +1,63 @@
+package driver;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.time.Duration;
+import java.util.Optional;
+
+public class Driver {
+    private static WebDriver driver;
+
+    public enum Config {
+        CHROME, FF, REMOTE
+    }
+
+    protected static Config config =
+            Optional.ofNullable(System.getProperty("CONFIG")).isEmpty() ?
+                    Config.CHROME : Config.valueOf(System.getProperty("CONFIG"));
+
+    public static WebDriver getDriver() {
+        if (null == driver) {
+            driver = getWebDriver();
+        }
+        return driver;
+    }
+
+    private static WebDriver getWebDriver() {
+        return switch (config) {
+            case FF -> getFFDriver();
+            case REMOTE -> getRemoteDriver();
+            default -> getChromeDriver();
+        };
+    }
+
+    private static WebDriver getChromeDriver() {
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
+        chromeOptions.addArguments("--start-maximized");
+        chromeOptions.addArguments("--disable-infobars");
+        return new ChromeDriver(chromeOptions);
+    }
+
+    public static void setTimeout(int seconds) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
+    }
+
+    public void quit() {
+        if (null != driver) {
+            driver.quit();
+        }
+    }
+
+    //TODO
+    private static WebDriver getRemoteDriver() {
+        return null;
+    }
+
+    //TODO
+    private static WebDriver getFFDriver() {
+        return null;
+    }
+}

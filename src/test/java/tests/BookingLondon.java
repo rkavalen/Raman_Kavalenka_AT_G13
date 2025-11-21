@@ -1,15 +1,12 @@
-package day16;
+package tests;
 
-import org.junit.After;
+import driver.Driver;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
 
 import static org.apache.commons.io.FileUtils.copyFile;
 
@@ -18,12 +15,8 @@ public class BookingLondon {
 
     @Before
     public void setDriver() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
-        chromeOptions.addArguments("--start-maximized");
-        chromeOptions.addArguments("--disable-infobars");
-        driver = new ChromeDriver(chromeOptions);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver = Driver.getDriver();
+        Driver.setTimeout(5);
     }
 
     @Test
@@ -49,12 +42,5 @@ public class BookingLondon {
 
         File screen = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         copyFile(screen, new File("pic.png"));
-    }
-
-    @After
-    public void quitDriver() {
-        if (null != driver) {
-            driver.quit();
-        }
     }
 }
