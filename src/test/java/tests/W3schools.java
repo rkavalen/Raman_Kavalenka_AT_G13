@@ -16,7 +16,7 @@ import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
-public class w3schools {
+public class W3schools {
     private WebDriver driver;
     private Actions make;
 
