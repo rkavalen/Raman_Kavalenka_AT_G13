@@ -1,4 +1,4 @@
-package playground.essence.people.testng;
+package tests;
 
 
 import org.testng.annotations.Test;

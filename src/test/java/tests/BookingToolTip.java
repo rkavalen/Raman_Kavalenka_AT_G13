@@ -1,6 +1,6 @@
-package day16;
+package tests;
 
-import org.junit.After;
+import driver.Driver;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,9 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -23,12 +22,8 @@ public class BookingToolTip {
 
     @Before
     public void setDriver() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
-        chromeOptions.addArguments("--start-maximized");
-        chromeOptions.addArguments("--disable-infobars");
-        driver = new ChromeDriver(chromeOptions);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver = Driver.getDriver();
+        Driver.setTimeout(5);
     }
 
     @Test
@@ -41,10 +36,11 @@ public class BookingToolTip {
         }
 
         Actions actions = new Actions(driver);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        By.ByXPath tooltipLocator = new By.ByXPath("//body/div[last()]/div");
+
+        Driver.setTimeout(0);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        By.ByXPath tooltipLocator = new By.ByXPath("//body/div[last()]/div");
 
         WebElement ccyButton = driver.findElement(By.xpath("//button[@data-testid='header-currency-picker-trigger']"));
         actions.moveToElement(ccyButton).perform();
@@ -61,13 +57,7 @@ public class BookingToolTip {
         WebElement languageToolTip = driver.findElement(tooltipLocator);
         Assert.assertEquals("language tooltip text check failed", "Выберите язык", languageToolTip.getText());
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-    }
+        Driver.setTimeout(5);
 
-    @After
-    public void quitDriver() {
-        if (null != driver) {
-            driver.quit();
-        }
     }
 }

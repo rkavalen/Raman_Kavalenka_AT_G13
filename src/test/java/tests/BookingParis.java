@@ -1,6 +1,6 @@
-package day16;
+package tests;
 
-import org.junit.After;
+import driver.Driver;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,8 +8,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -23,12 +21,8 @@ public class BookingParis {
 
     @Before
     public void setDriver() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
-        chromeOptions.addArguments("--start-maximized");
-        chromeOptions.addArguments("--disable-infobars");
-        driver = new ChromeDriver(chromeOptions);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver = Driver.getDriver();
+        Driver.setTimeout(5);
     }
 
     @Test
@@ -59,10 +53,10 @@ public class BookingParis {
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        Driver.setTimeout(0);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(visibilityOfElementLocated(By.xpath("//div[@data-testid='property-card']")));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        Driver.setTimeout(5);
         driver.findElement(By.xpath("//div[@data-filters-item='class:class=5']")).click();
 
         driver.findElement(By.xpath("//div//button[@data-testid='sorters-dropdown-trigger']")).click();
@@ -70,12 +64,5 @@ public class BookingParis {
         driver.findElement(By.xpath("//div//button[@data-id='class_asc']")).click();
 
         Assert.assertEquals("Рейтинг первого отеля не 5", "5 из 5", driver.findElement(By.xpath("//div[@role='button'][1]")).getAttribute("aria-label"));
-    }
-
-    @After
-    public void quitDriver() {
-        if (null != driver) {
-            driver.quit();
-        }
     }
 }

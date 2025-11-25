@@ -1,4 +1,4 @@
-package playground.essence.people.junit;
+package tests;
 
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
