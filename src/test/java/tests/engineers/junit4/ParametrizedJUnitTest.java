@@ -1,4 +1,4 @@
-package tests;
+package tests.engineers.junit4;
 
 import org.junit.Assert;
 import org.junit.FixMethodOrder;

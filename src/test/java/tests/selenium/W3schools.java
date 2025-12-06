@@ -1,4 +1,4 @@
-package tests;
+package tests.selenium;
 
 import driver.Driver;
 import org.junit.Assert;

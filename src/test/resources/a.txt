@@ -1,0 +1,61 @@
+create packages at src/test/java or src/test/resources required for:
+– driver - for web driver related stuff
+– objects - for application specific items if any
+– pages - for web pages representation
+– steps - for cucumber test steps (we will talk about later)
+– tests - for junit/testng tests
+– runners - for test runners
+– settings - for settings if any
+– utils - for ustils if any
+
+Refactor your test classes to have:
+– driver initialisation and it tuning need to be placed in separate class
+– all manipulations with web page (e.g. WebDriver actions, locators) must be separated to PageObjects classes
+– all test logic need to be placed in separate test classes, which uses instances of PageObjects classes
+– each test need to be created using following frameworks:JUnit4TestNGCucumber (TBD, skip this part)
+
+create precondition (no need to login there):
+open http://trashmail.comcreate temp email addresscreate
+precondition:
+open you mailboxfind an email from some dedicated sender
+create automated test:
+go to http://booking.comregister new user using new email address
+confirm your registration from mailbox
+verify, that mailbox was confirmed (there is not alert message in user account)
+
+create automated test:
+go to http://booking.com
+login as registered user
+find booking in Madrid, 1 month from now, 2 adults for 5 days
+the first and the last hotel in the list add to favorites
+verify, that "heart" button become red
+verify, that those 2 items appeared in the "My next trip" list
+
+create automated test:
+go to http://booking.com
+login as registered user
+verify, that all header elements exist
+
+презентации скинул
+домашка по огурцу уже есть у вас выше, повторяю
+Refactor your test classes to have:...Cucumber (TBD, skip this part) - это она
+домашка по log4j
+Add log4j2 logger to each test class:
+-- add INFO message to each logical test step,
+e.g "I logged in to application",
+"Form X was subbmitted"
+-- add ERROR message in case an error thrown (in catch clause)
+-- replace all sout printing with logger messages
+текста в домашке не много, а работы много, не откладывайте
+
+презентации скинул, домашка по веб-сервисам:
+WS address: http://178.124.206.46:8001/app/ws/
+create automation tests to verify possibility to search user by full username (min and max length),
+by partial username (min and max length),
+search all users - 5 tests in total
+tests should be combined and run with JUnit4tests should be run with Rest Assured libraries
+test data should be stored in json files
+data should be parsed with jackson libraries
+store test data, test objects, steps separately
+
+еще можно пописать существующие тесты селенидом

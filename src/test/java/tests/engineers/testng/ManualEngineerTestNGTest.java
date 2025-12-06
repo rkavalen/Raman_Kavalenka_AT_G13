@@ -1,11 +1,12 @@
-package tests;
+package tests.engineers.testng;
 
-import org.junit.Test;
+
+import org.testng.annotations.Test;
 import playground.essence.people.ManualEngineer;
 
-import static org.junit.Assert.assertEquals;
+import static org.testng.AssertJUnit.assertEquals;
 
-public class ManualEngineerJUnitTest {
+public class ManualEngineerTestNGTest {
     @Test
     public void getAgeTest() {
         ManualEngineer manualEngineer = new ManualEngineer(20, 1);

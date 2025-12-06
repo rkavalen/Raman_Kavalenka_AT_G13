@@ -31,3 +31,4 @@ bin/
 /build
 /out
 /test-output
+**/db.properties

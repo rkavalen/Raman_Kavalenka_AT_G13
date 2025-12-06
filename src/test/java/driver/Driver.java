@@ -1,17 +1,24 @@
 package driver;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.Optional;
+
 
 public class Driver {
     private static WebDriver driver;
 
     public enum Config {
-        CHROME, FF, REMOTE
+        CHROME,
+        FF,
+        REMOTE
     }
 
     protected static Config config =
@@ -41,8 +48,38 @@ public class Driver {
         return new ChromeDriver(chromeOptions);
     }
 
+    public static void get(String url) {
+        driver.get(url);
+    }
+
     public static void setTimeout(int seconds) {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
+    }
+
+    public static void waitUntillVisible(String xPath) {
+        Driver.setTimeout(0);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xPath)));
+        Driver.setTimeout(5);
+    }
+
+    public static void waitUntillClickable(By.ByXPath xPath) {
+        Driver.setTimeout(0);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(xPath));
+        Driver.setTimeout(5);
+    }
+
+    public static WebElement findByXpath(String xPath) {
+        return driver.findElement(By.xpath(xPath));
+    }
+
+    public static WebElement findByName(String name) {
+        return driver.findElement(By.name(name));
+    }
+
+    public static WebElement findByID(String id) {
+        return driver.findElement(By.id(id));
     }
 
     public void quit() {
