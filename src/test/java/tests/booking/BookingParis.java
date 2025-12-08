@@ -1,4 +1,4 @@
-package tests;
+package tests.booking;
 
 import driver.Driver;
 import org.junit.Assert;
@@ -34,6 +34,12 @@ public class BookingParis {
 //            e.printStackTrace();
         }
 
+        try {
+            driver.findElement(By.id("onetrust-reject-all-handler")).click();
+        } catch (NoSuchElementException e) {
+//            e.printStackTrace();
+        }
+
         WebElement searchField = driver.findElement(By.name("ss"));
         searchField.clear();
         searchField.sendKeys("Париж");
@@ -57,7 +63,7 @@ public class BookingParis {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(visibilityOfElementLocated(By.xpath("//div[@data-testid='property-card']")));
         Driver.setTimeout(5);
-        driver.findElement(By.xpath("//div[@data-filters-item='class:class=5']")).click();
+        driver.findElement(By.xpath("//div[@data-filters-item='class:class=5']//input")).click();
 
         driver.findElement(By.xpath("//div//button[@data-testid='sorters-dropdown-trigger']")).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div//button[@data-id='class_asc']")));

@@ -1,4 +1,4 @@
-package tests;
+package tests.booking;
 
 import driver.Driver;
 import org.junit.Assert;

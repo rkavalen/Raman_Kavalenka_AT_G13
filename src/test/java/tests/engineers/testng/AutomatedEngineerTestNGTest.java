@@ -1,4 +1,4 @@
-package tests;
+package tests.engineers.testng;
 
 import org.testng.annotations.Test;
 import playground.essence.people.AutomatedEngineer;

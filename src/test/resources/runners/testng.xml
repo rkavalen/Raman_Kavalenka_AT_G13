@@ -4,8 +4,8 @@
 
     <test name="Test 1">
         <classes>
-            <class name="tests.ParametrizedTestNGTest"/>
-<!--            <class name="tests.AutomatedEngineerTestNGTest"/>-->
+            <class name="tests.engineers.testng.ParametrizedTestNGTest"/>
+<!--            <class name="tests.engineers.testng.AutomatedEngineerTestNGTest"/>-->
         </classes>
     </test>
 </suite>
