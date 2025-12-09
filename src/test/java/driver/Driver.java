@@ -48,7 +48,7 @@ public class Driver {
         return new ChromeDriver(chromeOptions);
     }
 
-    public static void get(String url) {
+    public static void goTo(String url) {
         driver.get(url);
     }
 
@@ -56,14 +56,14 @@ public class Driver {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
     }
 
-    public static void waitUntillVisible(String xPath) {
+    public static void waitUntilVisible(String xPath) {
         Driver.setTimeout(0);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xPath)));
         Driver.setTimeout(5);
     }
 
-    public static void waitUntillClickable(By.ByXPath xPath) {
+    public static void waitUntilClickable(By.ByXPath xPath) {
         Driver.setTimeout(0);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(xPath));
@@ -82,9 +82,10 @@ public class Driver {
         return driver.findElement(By.id(id));
     }
 
-    public void quit() {
+    public static void destroy() {
         if (null != driver) {
             driver.quit();
+            driver = null;
         }
     }
 
